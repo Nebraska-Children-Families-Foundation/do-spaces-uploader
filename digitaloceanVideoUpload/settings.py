@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,3 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Settings for Digital Ocean Spaces Access
+AWS_ACCESS_KEY_ID = config('DO_SPACES_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('DO_SPACES_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('DO_SPACES_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = config('DO_SPACES_ENDPOINT_URL')
